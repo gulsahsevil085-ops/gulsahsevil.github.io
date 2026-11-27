@@ -3,281 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gülşah Sevil - Sosyal Hizmet Öğrencisi - Kişisel CV">
-  <title>Gülşah Sevil | CV</title>
+  <meta name="description" content="Gülşah Sevil - Sosyal Hizmet Öğrencisi - Özgeçmiş">
+  <title>Gülşah Sevil | Özgeçmiş</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ana: #0d9488;
-      --ana-acik: #14b8a6;
-      --ana-koyu: #0f766e;
-      --zemin: #f0fdfa;
+      --lacivert: #1f3a5f;
+      --vurgu: #2a8c92;
+      --zemin: #f3f5f8;
       --kutu: #ffffff;
-      --yazi: #1f2937;
-      --gri: #6b7280;
-      --cizgi: #d1f2ee;
+      --yazi: #2b2f36;
+      --gri: #667085;
+      --cizgi: #dfe4ea;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
+      font-family: 'Source Sans 3', Arial, sans-serif;
       background: var(--zemin);
       color: var(--yazi);
       line-height: 1.7;
+      font-size: 16px;
     }
-
-    /* Menü */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-    nav ul {
-      list-style: none;
-      margin: 0 auto;
-      padding: 0 20px;
-      max-width: 900px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px 26px;
-    }
-    nav a {
-      display: block;
-      padding: 16px 0;
-      color: var(--yazi);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      border-bottom: 3px solid transparent;
-      transition: 0.2s;
-    }
-    nav a:hover { color: var(--ana); border-bottom-color: var(--ana-acik); }
 
     /* Üst bölüm */
     header {
-      background: linear-gradient(135deg, var(--ana-koyu), var(--ana-acik));
+      background: var(--lacivert);
       color: white;
-      text-align: center;
-      padding: 70px 20px 80px;
+      padding: 56px 20px 52px;
+      border-bottom: 5px solid var(--vurgu);
     }
-    .avatar {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      background: white;
-      color: var(--ana);
-      font-size: 42px;
+    .ust-icerik { max-width: 960px; margin: 0 auto; }
+    header h1 {
+      margin: 0;
+      font-size: 40px;
       font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      border: 5px solid rgba(255,255,255,0.5);
+      letter-spacing: 0.5px;
     }
-    header h1 { margin: 0; font-size: 38px; font-weight: 700; }
-    header p { margin: 8px 0 0; font-size: 17px; opacity: 0.95; }
-    .rozet {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 6px 18px;
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 30px;
-      font-size: 14px;
+    header .unvan {
+      margin: 6px 0 0;
+      font-size: 19px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+    header .okul {
+      margin: 2px 0 0;
+      font-size: 16px;
+      opacity: 0.8;
     }
 
-    /* Genel yapı */
-    main { max-width: 900px; margin: -40px auto 40px; padding: 0 20px; }
-    section {
+    /* İki sütun yapısı */
+    .sayfa {
+      max-width: 960px;
+      margin: 32px auto 40px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    aside, main section, aside section {
       background: var(--kutu);
-      border-radius: 16px;
-      padding: 32px 36px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 18px rgba(13,148,136,0.1);
+      border: 1px solid var(--cizgi);
+      border-radius: 8px;
     }
+    aside section { padding: 24px; margin-bottom: 20px; }
+    main section { padding: 28px 32px; margin-bottom: 20px; }
+    aside section:last-child, main section:last-child { margin-bottom: 0; }
+    aside { background: none; border: none; }
+
     h2 {
-      margin: 0 0 18px;
-      font-size: 22px;
-      color: var(--ana-koyu);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    h2::after {
-      content: "";
-      flex: 1;
-      height: 2px;
-      background: var(--cizgi);
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--lacivert);
+      border-bottom: 2px solid var(--vurgu);
     }
     p { margin: 0; }
 
-    /* Zaman çizgisi */
-    .zaman {
-      border-left: 3px solid var(--ana-acik);
-      padding-left: 22px;
-      position: relative;
+    /* Liste öğeleri */
+    .oge { margin-bottom: 14px; }
+    .oge:last-child { margin-bottom: 0; }
+    .oge .baslik { font-weight: 600; color: var(--yazi); }
+    .oge .alt { color: var(--gri); font-size: 15px; }
+    .oge .tarih {
+      color: var(--vurgu);
+      font-size: 14px;
+      font-weight: 600;
     }
-    .zaman::before {
-      content: "";
-      position: absolute;
-      left: -9px;
-      top: 6px;
-      width: 15px;
-      height: 15px;
-      background: var(--ana);
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 0 0 2px var(--ana-acik);
-    }
-    .zaman h3 { margin: 0; font-size: 17px; }
-    .tarih { color: var(--ana); font-size: 14px; font-weight: 500; }
-    .alt { color: var(--gri); font-size: 14px; }
 
-    /* Kartlar */
-    .kartlar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
+    /* Eğitim ve kurslar */
+    .kayit {
+      padding-left: 16px;
+      border-left: 3px solid var(--vurgu);
+      margin-bottom: 18px;
     }
-    .kart {
-      background: var(--zemin);
-      border: 1px solid var(--cizgi);
-      border-radius: 12px;
-      padding: 20px;
-      transition: 0.25s;
+    .kayit:last-child { margin-bottom: 0; }
+    .kayit h3 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--lacivert);
     }
-    .kart:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(13,148,136,0.18);
-      border-color: var(--ana-acik);
+    .kayit .alt { color: var(--gri); font-size: 15px; }
+    .kayit .tarih {
+      color: var(--vurgu);
+      font-size: 14px;
+      font-weight: 600;
     }
-    .kart .ikon { font-size: 28px; margin-bottom: 6px; }
-    .kart h3 { margin: 0 0 4px; font-size: 16px; color: var(--ana-koyu); }
-    .kart p { font-size: 14px; color: var(--gri); }
 
-    /* Buton */
-    .buton {
-      display: inline-block;
-      padding: 12px 28px;
-      background: var(--ana);
-      color: white;
+    /* Bağlantı */
+    .baglanti {
+      color: var(--lacivert);
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 30px;
-      font-weight: 500;
-      transition: 0.25s;
+      border-bottom: 2px solid var(--vurgu);
     }
-    .buton:hover { background: var(--ana-koyu); transform: translateY(-2px); }
+    .baglanti:hover { color: var(--vurgu); }
 
     footer {
       text-align: center;
       color: var(--gri);
       font-size: 13px;
-      padding: 10px 20px 40px;
+      padding: 0 20px 36px;
     }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 30px; }
-      section { padding: 24px 20px; }
-      nav ul { gap: 0 16px; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <ul>
-      <li><a href="#hakkimda">Hakkımda</a></li>
-      <li><a href="#egitim">Eğitim</a></li>
-      <li><a href="#kurslar">Kurslar</a></li>
-      <li><a href="#ilgi">İlgi Alanları</a></li>
-      <li><a href="#hedef">Hedeflerim</a></li>
-      <li><a href="#iletisim">İletişim</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <div class="avatar">GS</div>
-    <h1>Gülşah Sevil</h1>
-    <p>Sosyal Hizmet Öğrencisi</p>
-    <span class="rozet">İstanbul Sabahattin Zaim Üniversitesi</span>
-  </header>
-
-  <main>
-
-    <section id="hakkimda">
-      <h2>Hakkımda</h2>
-      <p>
-        İstanbul Sabahattin Zaim Üniversitesi Sosyal Hizmet bölümünde 2. sınıf öğrencisiyim.
-        Öğrenmeye açık, yeni şeyler denemeyi seven biriyim. Akademik eğitimimin yanında
-        işaret dili ve İngilizce kurslarına devam ederek kendimi geliştiriyorum.
-        Boş zamanlarımda amatör olarak gitar çalıyor ve kitap okuyorum.
-      </p>
-    </section>
-
-    <section id="egitim">
-      <h2>Eğitim</h2>
-      <div class="zaman">
-        <h3>Sosyal Hizmet (Lisans)</h3>
-        <div class="alt">İstanbul Sabahattin Zaim Üniversitesi</div>
-        <div class="tarih">2025 - Devam ediyor</div>
-      </div>
-    </section>
-
-    <section id="kurslar">
-      <h2>Kurslar</h2>
-      <div class="kartlar">
-        <div class="kart">
-          <div class="ikon">🤟</div>
-          <h3>İşaret Dili Kursu</h3>
-          <p>Devam ediyor. Kurs sonunda sertifika alınacak.</p>
-        </div>
-        <div class="kart">
-          <div class="ikon">🌍</div>
-          <h3>İngilizce Kursu</h3>
-          <p>Devam ediyor.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="ilgi">
-      <h2>İlgi Alanları</h2>
-      <div class="kartlar">
-        <div class="kart">
-          <div class="ikon">🎸</div>
-          <h3>Gitar</h3>
-          <p>Amatör olarak gitar çalıyorum.</p>
-        </div>
-        <div class="kart">
-          <div class="ikon">📚</div>
-          <h3>Kitap Okumak</h3>
-          <p>Okumak en sevdiğim aktivitelerden biri.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="hedef">
-      <h2>Hedeflerim</h2>
-      <p>
-        Sosyal hizmet alanında kendimi geliştirmeyi, öğrendiğim işaret dilini ve
-        yabancı dil becerilerimi mesleğimde kullanarak farklı kesimlere ulaşabilen,
-        nitelikli bir sosyal hizmet uzmanı olmayı hedefliyorum.
-      </p>
-    </section>
-
-    <section id="iletisim">
-      <h2>İletişim</h2>
-      <a class="buton" href="https://github.com/kullaniciadin" target="_blank">GitHub Profilim</a>
-    </section>
-
-  </main>
-
-  <footer>© 2026 Gülşah Sevil</footer>
-
-</body>
-</html>
+    @media (max-width: 760px) {
+      .sayfa { grid-template-columns: 1fr; }
+      header h1 { font-size: 32px; }
+      main section { padding:
