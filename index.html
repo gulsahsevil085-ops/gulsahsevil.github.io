@@ -3,96 +3,281 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gülşah Sevil - CV</title>
+  <meta name="description" content="Gülşah Sevil - Sosyal Hizmet Öğrencisi - Kişisel CV">
+  <title>Gülşah Sevil | CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ana: #0d9488;
+      --ana-acik: #14b8a6;
+      --ana-koyu: #0f766e;
+      --zemin: #f0fdfa;
+      --kutu: #ffffff;
+      --yazi: #1f2937;
+      --gri: #6b7280;
+      --cizgi: #d1f2ee;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
     body {
-      font-family: Arial, sans-serif;
-      background: #e6f7f5;
       margin: 0;
-      color: #222;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--zemin);
+      color: var(--yazi);
+      line-height: 1.7;
     }
-    .kutu {
-      max-width: 800px;
-      margin: 30px auto;
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+
+    /* Menü */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
-    .ust {
-      background: linear-gradient(135deg, #0d9488, #14b8a6);
+    nav ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0 20px;
+      max-width: 900px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 26px;
+    }
+    nav a {
+      display: block;
+      padding: 16px 0;
+      color: var(--yazi);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.2s;
+    }
+    nav a:hover { color: var(--ana); border-bottom-color: var(--ana-acik); }
+
+    /* Üst bölüm */
+    header {
+      background: linear-gradient(135deg, var(--ana-koyu), var(--ana-acik));
       color: white;
-      padding: 40px;
+      text-align: center;
+      padding: 70px 20px 80px;
     }
-    .ust h1 { margin: 0; font-size: 36px; }
-    .meslek { margin: 8px 0 0; font-size: 18px; opacity: 0.95; }
-    .icerik { padding: 10px 40px 40px; }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: white;
+      color: var(--ana);
+      font-size: 42px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      border: 5px solid rgba(255,255,255,0.5);
+    }
+    header h1 { margin: 0; font-size: 38px; font-weight: 700; }
+    header p { margin: 8px 0 0; font-size: 17px; opacity: 0.95; }
+    .rozet {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 6px 18px;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    /* Genel yapı */
+    main { max-width: 900px; margin: -40px auto 40px; padding: 0 20px; }
+    section {
+      background: var(--kutu);
+      border-radius: 16px;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 18px rgba(13,148,136,0.1);
+    }
     h2 {
-      color: #0d9488;
-      border-left: 5px solid #14b8a6;
-      padding-left: 12px;
-      margin-top: 35px;
+      margin: 0 0 18px;
+      font-size: 22px;
+      color: var(--ana-koyu);
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .is { margin-bottom: 15px; }
-    .is span { color: #666; font-size: 14px; }
-    .yetenekler { display: flex; flex-wrap: wrap; gap: 10px; }
-    .yetenekler span {
-      background: #ccfbf1;
-      color: #0f766e;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 15px;
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: var(--cizgi);
     }
-    a { color: #0d9488; font-weight: bold; }
+    p { margin: 0; }
+
+    /* Zaman çizgisi */
+    .zaman {
+      border-left: 3px solid var(--ana-acik);
+      padding-left: 22px;
+      position: relative;
+    }
+    .zaman::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 6px;
+      width: 15px;
+      height: 15px;
+      background: var(--ana);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--ana-acik);
+    }
+    .zaman h3 { margin: 0; font-size: 17px; }
+    .tarih { color: var(--ana); font-size: 14px; font-weight: 500; }
+    .alt { color: var(--gri); font-size: 14px; }
+
+    /* Kartlar */
+    .kartlar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .kart {
+      background: var(--zemin);
+      border: 1px solid var(--cizgi);
+      border-radius: 12px;
+      padding: 20px;
+      transition: 0.25s;
+    }
+    .kart:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(13,148,136,0.18);
+      border-color: var(--ana-acik);
+    }
+    .kart .ikon { font-size: 28px; margin-bottom: 6px; }
+    .kart h3 { margin: 0 0 4px; font-size: 16px; color: var(--ana-koyu); }
+    .kart p { font-size: 14px; color: var(--gri); }
+
+    /* Buton */
+    .buton {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--ana);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: 0.25s;
+    }
+    .buton:hover { background: var(--ana-koyu); transform: translateY(-2px); }
+
+    footer {
+      text-align: center;
+      color: var(--gri);
+      font-size: 13px;
+      padding: 10px 20px 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 30px; }
+      section { padding: 24px 20px; }
+      nav ul { gap: 0 16px; }
+    }
   </style>
 </head>
 <body>
-  <div class="kutu">
 
-    <div class="ust">
-      <h1>Gülşah Sevil</h1>
-      <p class="meslek">İstanbul Sabahattin Zaim Üniversitesi - Sosyal Hizmet Öğrencisi</p>
-    </div>
+  <nav>
+    <ul>
+      <li><a href="#hakkimda">Hakkımda</a></li>
+      <li><a href="#egitim">Eğitim</a></li>
+      <li><a href="#kurslar">Kurslar</a></li>
+      <li><a href="#ilgi">İlgi Alanları</a></li>
+      <li><a href="#hedef">Hedeflerim</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+  </nav>
 
-    <div class="icerik">
+  <header>
+    <div class="avatar">GS</div>
+    <h1>Gülşah Sevil</h1>
+    <p>Sosyal Hizmet Öğrencisi</p>
+    <span class="rozet">İstanbul Sabahattin Zaim Üniversitesi</span>
+  </header>
 
+  <main>
+
+    <section id="hakkimda">
       <h2>Hakkımda</h2>
       <p>
         İstanbul Sabahattin Zaim Üniversitesi Sosyal Hizmet bölümünde 2. sınıf öğrencisiyim.
-        Yeni şeyler öğrenmeyi seven, öğrenmeye açık biriyim. Boş zamanlarımda amatör olarak
-        gitar çalıyor ve kitap okuyorum. Şu anda işaret dili ve İngilizce kurslarına devam ediyorum.
+        Öğrenmeye açık, yeni şeyler denemeyi seven biriyim. Akademik eğitimimin yanında
+        işaret dili ve İngilizce kurslarına devam ederek kendimi geliştiriyorum.
+        Boş zamanlarımda amatör olarak gitar çalıyor ve kitap okuyorum.
       </p>
+    </section>
 
+    <section id="egitim">
       <h2>Eğitim</h2>
-      <div class="is">
-        <strong>İstanbul Sabahattin Zaim Üniversitesi - Sosyal Hizmet</strong><br>
-        <span>2025 - devam ediyor</span>
+      <div class="zaman">
+        <h3>Sosyal Hizmet (Lisans)</h3>
+        <div class="alt">İstanbul Sabahattin Zaim Üniversitesi</div>
+        <div class="tarih">2025 - Devam ediyor</div>
       </div>
+    </section>
 
+    <section id="kurslar">
       <h2>Kurslar</h2>
-      <div class="is">
-        <strong>İşaret Dili Kursu</strong><br>
-        <span>Devam ediyor - 2 ay sonra sertifika alınacak</span>
+      <div class="kartlar">
+        <div class="kart">
+          <div class="ikon">🤟</div>
+          <h3>İşaret Dili Kursu</h3>
+          <p>Devam ediyor. Kurs sonunda sertifika alınacak.</p>
+        </div>
+        <div class="kart">
+          <div class="ikon">🌍</div>
+          <h3>İngilizce Kursu</h3>
+          <p>Devam ediyor.</p>
+        </div>
       </div>
-      <div class="is">
-        <strong>İngilizce Kursu</strong><br>
-        <span>Devam ediyor</span>
-      </div>
+    </section>
 
-      <h2>Yetenekler ve İlgi Alanları</h2>
-      <div class="yetenekler">
-        <span>Gitar</span>
-        <span>İşaret Dili</span>
-        <span>İngilizce</span>
-        <span>Kitap Okumak</span>
+    <section id="ilgi">
+      <h2>İlgi Alanları</h2>
+      <div class="kartlar">
+        <div class="kart">
+          <div class="ikon">🎸</div>
+          <h3>Gitar</h3>
+          <p>Amatör olarak gitar çalıyorum.</p>
+        </div>
+        <div class="kart">
+          <div class="ikon">📚</div>
+          <h3>Kitap Okumak</h3>
+          <p>Okumak en sevdiğim aktivitelerden biri.</p>
+        </div>
       </div>
+    </section>
 
-      <h2>İletişim</h2>
+    <section id="hedef">
+      <h2>Hedeflerim</h2>
       <p>
-        <a href="https://github.com/kullaniciadin">GitHub profilim</a>
+        Sosyal hizmet alanında kendimi geliştirmeyi, öğrendiğim işaret dilini ve
+        yabancı dil becerilerimi mesleğimde kullanarak farklı kesimlere ulaşabilen,
+        nitelikli bir sosyal hizmet uzmanı olmayı hedefliyorum.
       </p>
+    </section>
 
-    </div>
-  </div>
+    <section id="iletisim">
+      <h2>İletişim</h2>
+      <a class="buton" href="https://github.com/kullaniciadin" target="_blank">GitHub Profilim</a>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Gülşah Sevil</footer>
+
 </body>
 </html>
