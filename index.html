@@ -136,4 +136,103 @@
     @media (max-width: 760px) {
       .sayfa { grid-template-columns: 1fr; }
       header h1 { font-size: 32px; }
-      main section { padding:
+      main section { padding: 24px 22px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .sayfa { margin: 20px auto; }
+      aside section, main section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="ust-icerik">
+      <h1>Gülşah Sevil</h1>
+      <p class="unvan">Sosyal Hizmet Öğrencisi</p>
+      <p class="okul">İstanbul Sabahattin Zaim Üniversitesi</p>
+    </div>
+  </header>
+
+  <div class="sayfa">
+
+    <aside>
+      <section>
+        <h2>Diller</h2>
+        <div class="oge">
+          <div class="baslik">İngilizce</div>
+          <div class="alt">Kurs devam ediyor</div>
+        </div>
+        <div class="oge">
+          <div class="baslik">İşaret Dili</div>
+          <div class="alt">Kurs devam ediyor</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>İlgi Alanları</h2>
+        <div class="oge">
+          <div class="baslik">Gitar</div>
+          <div class="alt">Amatör olarak çalıyorum</div>
+        </div>
+        <div class="oge">
+          <div class="baslik">Kitap Okumak</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>İletişim</h2>
+        <a class="baglanti" href="https://github.com/kullaniciadin" target="_blank" rel="noopener">GitHub Profilim</a>
+      </section>
+    </aside>
+
+    <main>
+      <section>
+        <h2>Hakkımda</h2>
+        <p>
+          İstanbul Sabahattin Zaim Üniversitesi Sosyal Hizmet bölümünde 2. sınıf öğrencisiyim.
+          Öğrenmeye açık, yeni şeyler denemeyi seven biriyim. Akademik eğitimimin yanında
+          işaret dili ve İngilizce kurslarına devam ederek kendimi geliştiriyorum.
+        </p>
+      </section>
+
+      <section>
+        <h2>Eğitim</h2>
+        <div class="kayit">
+          <h3>Sosyal Hizmet (Lisans)</h3>
+          <div class="alt">İstanbul Sabahattin Zaim Üniversitesi</div>
+          <div class="tarih">2025 - Devam ediyor</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Kurslar ve Sertifikalar</h2>
+        <div class="kayit">
+          <h3>İşaret Dili Kursu</h3>
+          <div class="alt">Kurs devam etmektedir, tamamlandığında sertifika alınacaktır.</div>
+          <div class="tarih">Devam ediyor</div>
+        </div>
+        <div class="kayit">
+          <h3>İngilizce Kursu</h3>
+          <div class="tarih">Devam ediyor</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Hedeflerim</h2>
+        <p>
+          Sosyal hizmet alanında kendimi geliştirmeyi, öğrendiğim işaret dili ve
+          yabancı dil becerilerimi mesleğimde kullanarak farklı kesimlere ulaşabilen,
+          nitelikli bir sosyal hizmet uzmanı olmayı hedefliyorum.
+        </p>
+      </section>
+    </main>
+
+  </div>
+
+  <footer>© 2026 Gülşah Sevil</footer>
+
+</body>
+</html>
